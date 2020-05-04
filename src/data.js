@@ -24,7 +24,7 @@ export const allPokemon = (dataSet) => {
   }
   return newDataArray;
 };
-
+​
 //Ordena Pokemones por nombre de la A a la Z
 export const orderPokemonAz = (dataSet)=>{
   const newDataArray = [];
@@ -42,7 +42,7 @@ export const orderPokemonAz = (dataSet)=>{
   });
   return newDataArray;
 };
-
+​
 //Ordena Pokemones por nombre de la Z a la A
 export const orderPokemonZa = (dataSet)=>{
   const newDataArray = [];
@@ -60,4 +60,33 @@ export const orderPokemonZa = (dataSet)=>{
   });
   return newDataArray;
 };
+​
+/*
+export const orderPokemonDescendant = (dataSet)=>{
+  const newDataArray = [];
+  for (let i = 0; i < dataSet.length; i += 1) {
+    newDataArray.push(dataSet[i]);
+  }
+  newDataArray.sort((a, b) => {
+    if (a.id > b.id) {
+      return dataSet.reverse();
+      console.log("1");
+    }
+    if (a.id < b.id) {
+      return dataSet;
+      console.log("2");
+    }
+    return 0;
+  });
+  return newDataArray;
+};
+*/
+//Busca Pokemon por el nombre en barra de navegación
+export const searchPoke = (dataSet, text) =>{
+  const search = dataSet.filter((e) => {
+    return e.name.includes(text);
+  });
+  return search;
+​
+}
 
