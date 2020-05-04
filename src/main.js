@@ -1,6 +1,5 @@
 import Pokemones from "./data/pokemon/pokemon.js";
 import { allPokemon, orderPokemonAz, orderPokemonZa, searchPoke  } from "./data.js";
-​
 const card = document.getElementById("viewCardCreate");
 const btnPokedex = document.getElementById("btnSecondPage");
 let fnOptionBody = document.getElementById("fnOptionBody");
@@ -8,37 +7,28 @@ let firstPage = document.getElementById("intro");
 let home = document.getElementById("home");
 let lhome = document.getElementById("link-home");
 let pokedex = document.getElementById("pokedex");
-​
 //Arreglo con todos los datos de Pokemones
 const allData = allPokemon(Pokemones.pokemon);
 const orderedDataAz = orderPokemonAz(allData);
 const orderedDataZa = orderPokemonZa(allData);
 //const orderedDataDesc = orderPokemonDescendant(allData);
-​
 //Funcionalidad del botón  y enlace que oculta la bienvenida y lleva a la Pokedex
 btnPokedex.addEventListener("click", () =>{
   viewAllPokemon(allData);
   showSecondPage();
   firstPage.style.display = "none";
 });
-​
 pokedex.addEventListener("click", () =>{
   viewAllPokemon(allData);
   showSecondPage();
   firstPage.style.display = "none";
 });
-​
-​
 //Funcionalidad enlace Inicio y Logo, para mostrar la bienvenida
 function homePage() {
   window.location.reload();
 };
 home.addEventListener("click", homePage);
 lhome.addEventListener("click", homePage);
-​
-​
-​
-​
 //Funcionalidad para mostrar la segunda pantalla
 function showSecondPage(){
   //Crear selects y darles atributos
@@ -50,7 +40,6 @@ function showSecondPage(){
   selectType.setAttribute("id", "tipoPoke");
   selectType.setAttribute("class", "tipoPoke");
   selectType.setAttribute("name", "tipoPoke");
-  
   //Crear options del select Orden y sus nodos de texto y darles atributos
   let optOrderAll = document.createElement("option");
   let optOrderAZ = document.createElement("option");
@@ -72,21 +61,18 @@ function showSecondPage(){
   optOrderAsc.setAttribute("value", "1-151");
   optOrderDesc.setAttribute("id", "descendant");
   optOrderDesc.setAttribute("value", "151-1");
-  
   //Añadir nodos de texto a elementos y elementos option a select
   optOrderAll.appendChild(optOrderAllText);
   optOrderAZ.appendChild(optOrderAZText);
   optOrderZA.appendChild(optOrderZAText);
   optOrderAsc.appendChild(optOrderAscText);
   optOrderDesc.appendChild(optOrderDescText);
-  
   //Añadir options a select
   selectOrder.appendChild(optOrderAll);
   selectOrder.appendChild(optOrderAZ);
   selectOrder.appendChild(optOrderZA);
   selectOrder.appendChild(optOrderAsc);
   selectOrder.appendChild(optOrderDesc);
-  
   /*slType = `
   <option value="allType">Por Tipos</option>
   <option value="Grass">Planta</option>
@@ -109,11 +95,9 @@ function showSecondPage(){
   <option value="debilidad">Por Debilidad</option>
   </select>
   `;*/
-  
   fnOptionBody.appendChild(selectOrder);
   //fnOptionBody.appendChild(selectType);
 }
-​
 //Muestra todos lo Pokemones en pantalla
 function viewAllPokemon(dataSet) {
   let cardTemplate = "";
@@ -132,8 +116,6 @@ function viewAllPokemon(dataSet) {
   }
   card.innerHTML = cardTemplate;
 }
-​
-​
 //Funcionalidad input de búsqueda por nombre
 const input = document.getElementById("textPoke");
 input.addEventListener("keydown", function(e) {
@@ -160,7 +142,6 @@ input.addEventListener("keydown", function(e) {
     card.innerHTML = cardTemplate;
   } 
 });
-​
 //Ordenar pokemones A-Z / Z-A / Regresar a todos
 const selectElement = document.querySelector(".orderPoke");
 console.log(selectElement);
@@ -176,4 +157,3 @@ selectElement.addEventListener("change", (e) => {
     viewAllPokemon(allData);
   }
 });
-

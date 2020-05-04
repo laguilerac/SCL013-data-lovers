@@ -24,7 +24,6 @@ export const allPokemon = (dataSet) => {
   }
   return newDataArray;
 };
-​
 //Ordena Pokemones por nombre de la A a la Z
 export const orderPokemonAz = (dataSet)=>{
   const newDataArray = [];
@@ -42,7 +41,6 @@ export const orderPokemonAz = (dataSet)=>{
   });
   return newDataArray;
 };
-​
 //Ordena Pokemones por nombre de la Z a la A
 export const orderPokemonZa = (dataSet)=>{
   const newDataArray = [];
@@ -60,7 +58,6 @@ export const orderPokemonZa = (dataSet)=>{
   });
   return newDataArray;
 };
-​
 /*
 export const orderPokemonDescendant = (dataSet)=>{
   const newDataArray = [];
@@ -87,6 +84,4 @@ export const searchPoke = (dataSet, text) =>{
     return e.name.includes(text);
   });
   return search;
-​
 }
-

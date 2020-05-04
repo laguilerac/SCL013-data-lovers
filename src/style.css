@@ -12,45 +12,37 @@ p{
     font-size: 20px;
     line-height: 24px;
 }
-​
 .nav-flex  {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, #A8DD9C 0%, #24CCAA 100%);
 }
-​
 .logo {
     margin: 0 0 0 5%;
 }
-​
 .logo img{
     height: 40px;
     display: block;
     padding: 1em;
 }
-​
 .navigation {
     display: flex;
     list-style: none;
     text-transform: uppercase;
 }
-​
 .logo, .navigation a {
     text-decoration: none;
     letter-spacing: .45rem;
 }
-​
 .navigation a {
     display: block;
     padding: 1em;
     color: white;
 }
-​
 .navigation a:hover {
     background: #2F80ED;
 }
-​
 input{
     height: 20px;
     border-radius: 10px;
@@ -58,7 +50,6 @@ input{
     border-color: #2F80ED;
     text-indent: 4%;
 }
-​
 header, section {
     display: flex;
     flex-direction: row;
@@ -69,7 +60,6 @@ header, section {
     max-height: 470px;
     margin-top: 10%;
 }
-​
 .button{
     margin-top: 2%;
     border-width: 0px;
@@ -82,7 +72,6 @@ header, section {
     color: #fff;
     text-transform: uppercase;
 }
-​
 .filterOptionBody{
     margin: 0 auto;
     max-width: 90%;  
@@ -92,7 +81,6 @@ header, section {
     flex-direction: row;
     padding: 2% 0;      
 }
-​
 #filterOption{
     display: flex;
     justify-content: space-around;
@@ -101,8 +89,7 @@ header, section {
 select{
     width: 250px;
     padding: 10px;
-    border-radius: 8px ;
-    
+    border-radius: 8px ; 
 }
 .viewCard {
     width: 90%;
@@ -121,9 +108,7 @@ select{
     box-shadow: 1.94667px 2.92px 3.89333px rgba(0, 0, 0, 0.25);
     border-radius: 9.73333px ;
     margin: 40px;
-    
 }
-​
 .imgPokemon{
     max-width: 130px;
 }
@@ -132,65 +117,44 @@ select{
     margin: 0 auto;
     border: 1px solid black;
 }
-​
-​
-​
-​
-​
-​
-​
-/* *********** media queries *********** */
 @media all and (max-width: 990px) {
     .nav-flex {
         flex-direction: column;
     }
-    
     .logo {
         margin: 0;
     }
-    
     .navigation  {
         width: 100%;
         justify-content: space-around;
     }
 }
-​
-​
-/* ****** ****** */
 @media all and (max-width: 600px) {
-    
     .logo {
         margin: .25em 0;
         align-self: left; 
     }
-    
     .navigation {
         flex-direction: column;
     }
-    
     .navigation a{ 
         text-align: center; 
         padding: 10px;
         border-top: 1px solid rgba(255,255,255,0.3); 
         border-bottom: 1px solid rgba(0,0,0,0.1); 
     }
-    
     input{
         margin: 2% 0 2% 25%;
     }
-    
     .navigation li:last-of-type a {
         border-bottom: none;
     } 
     #filterOption, #filterOption .filterOptionBody {
         flex-direction:column;
-        
     } 
-    
     #img-box{
         display: none;
     }
-    
     #info{
         flex-direction:column;
         max-width: 90%;
@@ -202,7 +166,4 @@ select{
     p{
         font-size: 16px;
     }
-    
 }
-​
-​
