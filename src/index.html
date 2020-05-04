@@ -1,70 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Lovers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Data Lovers</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="headSite">
-    <div class="filterOptionBody">
-    <img class="imgLogo" src="./imagenes/logo.png">
-    <div>
-      <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Pokedex</a>
-        <input type="text" placeholder="Buscar">
-      </nav>
+	<nav class="nav-flex">
+    <a class="logo" id="home" href="#"><img src="../src/img/Logo.png" alt=""></a>
+    <ul class="navigation">
+      <li><a id="link-home" href="#">Inicio</a></li>
+      <li><a id="pokedex" href="#">Pokedex</a></li>
+      <li><input id="textPoke" placeholder="Buscar"></li>
+    </ul>
+  </nav>
+  <header id="intro">
+		<div id="info">
+      <h1>Bienvenidos a PokeMundo</h1>
+			<p class="info-block">Un lugar único para que descubras y explores los Pokemon de la región <br>
+				de Kanto, un gran acompañante para todo jugador de Pokemon Go!</p>
+      <button class="button" id="btnSecondPage">Ir a Pokedex</button>
     </div>
+    <div id="img-box">
+      <img src="../src/img/pinpng.com-pokemon-girl-png-3429630.png" alt="entrenadora pokemon" id="img-header">
     </div>
-  </div>
-  <div class="filterOption">
-    <div class="filterOptionBody">
-      
-       <select id="ordenPoke" class="ordenPoke" name="ordenPoke">
-          <option id="All" value="All">Ordenar</option>
-          <option id="az" value="A-Z">A-Z</option>
-          <option id="za" value="Z-A">Z-A</option>
-          <option id="descendant" value="151-1">151-1</option> 
-        </select>
-      
-      
-        <select id="tipoPoke" class="tipoPoke" name="tipoPoke">
-          <option value="allType">Por Tipos</option>
-          <option value="Grass">Planta</option>
-          <option value="Poison">Veneno</option>
-          <option value="Normal">Normal</option>
-          <option value="Fire">Fuego</option>
-          <option value="Water">Agua</option>
-          <option value="Ice">Hielo</option>
-          <option value="Ground">Tierra</option>
-          <option value="Rock">Roca</option>
-          <option value="Bug">Bicho</option>
-          <option value="Electric">Eléctrico</option>
-          <option value="Fighting">Pelea</option>
-          <option value="Flying">Volador</option>
-          <option value="Psychic">Psíquico</option>
-          <option value="Ghost">Fantasma</option>
-          <option value="Dragon">Dragón</option>
-        </select>
-           
-      
-        <select id="debility" class="debility" name="debility">
-          <option value="debilidad">Por Debilidad</option>
-        </select>
-      
+  </header>
+	<section id="filterOption">
+    <div class="filterOptionBody" id="fnOptionBody">
+      <!-- acá van los selects -->
     </div>
-  </div>
-</div>
-  
-    <div class="viewCard" id="viewCard">
-      <div class="viewCardCreate" id="viewCardCreate">
-        <!-- cardtemplate -->
-      </div>
-    </div>
-  <script src="https://kit.fontawesome.com/41ea5ab601.js" crossorigin="anonymous"></script>
-  <script src="main.js" type="module"></script>
+	</section>
+​
+<section class="viewCard" id="viewCard">
+	<div class="viewCardCreate" id="viewCardCreate">
+		<!-- acá van las tarjetas --> 
+	</div>
+</section>
+<script src="https://kit.fontawesome.com/41ea5ab601.js" crossorigin="anonymous"></script>
+<script src="main.js" type="module"></script>
 </body>
 </html>
