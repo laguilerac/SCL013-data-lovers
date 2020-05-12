@@ -19,6 +19,12 @@ let capturar = () => {
   viewAllPokemon(allData);
 };
 document.getElementById("btnSecondPage").addEventListener("click", capturar);
+document.getElementById("pokedex").addEventListener("click", capturar);
+let home = () => {
+  window.location.reload();
+};
+document.getElementById("home").addEventListener('click', home);
+document.getElementById("link-home").addEventListener('click', home);
 const card = document.getElementById("viewCardCreate");
 //Arreglo con todos los datos de Pokemones
 const allData = allPokemon(Pokemones.pokemon);
@@ -31,21 +37,19 @@ function viewAllPokemon(dataSet) {
   for (let i = 0; i < dataSet.length; i++) {
     cardTemplate += `
     <div id="elementCard" class="elementCard">
-    <div id='pokemon${dataSet[i].id}' class="card ${dataSet[i].type[0]}">
+    <div id='pokemon${dataSet[i].id}' class="card">
     <div id="itemsPoke" class='itemsPoke'> 
     <h2>${dataSet[i].name}</h2>
     <h3 id="numId">${dataSet[i].num}</h3>
     <img class="imgPokemon" src="https://pokeres.bastionbot.org/images/pokemon/${dataSet[i].id}.png"/>
     <h3>Tipo:</h3>
-    <span>${dataSet[i].type.join(
-      "</br>"
-      )}</span>
-      </br>
-      <h3>Debilidad:</h3>
-      <span>${dataSet[i].weaknesses.join("</br>")}</span>
-      </div>
-      </div>
-      </div>`;
+    <div><span>${dataSet[i].type.join("</br>")}</span></div>
+    </br>
+    <h3>Debilidad:</h3>
+    <span>${dataSet[i].weaknesses.join("</br>")}</span>
+    </div>
+    </div>
+    </div>`;
     }
     card.innerHTML = cardTemplate; 
     modal(dataSet);
@@ -117,44 +121,46 @@ function viewAllPokemon(dataSet) {
         console.log()
         cardcont.innerHTML += `
         <section class="tarjetaPrincipal">
-        <div class="x">
         <span class="close">&times;</span>
+          <section class="izquierda">
+            <div class="caracteristicaPrincipal">
+              <h3>${e[i].num}</h3>
+              <h2>${e[i].name}</h2>
+              <img class="img-modal" src="https://pokeres.bastionbot.org/images/pokemon/${e[i].id}.png"> 
+              <h3 class="tipo">Tipo:</h3>
+              <p>${e[i].type.join("</br>")}</p>
+            </div>
+          </section>
+        <div class="medio">
+          <div class="text-PokeCard">
+            <h3>Altura:</h3>
+            <p>${e[i].height}</p>
+            <h3>Peso:</h3>
+            <p>${e[i].weight}</p>
+          </div>
+          <div class="text-PokeCard">
+            <h3>Pre Evolución:</h3>
+            <p>${e[i].prev_evolution ? e[i].prev_evolution[0].num : ' - '}</p> 
+            <p>${e[i].prev_evolution ? e[i].prev_evolution[0].name : 'No tiene'}</p>
+          </div> 
+          <div class="text-PokeCard">
+            <h3>Evolución:</h3>
+            <p>${e[i].next_evolution ? e[i].next_evolution[0].num : 'No tiene'}</p> 
+            <p>${e[i].next_evolution ? e[i].next_evolution[0].name : 'No tiene'}</p>
+          </div>
         </div>
-        <section class="izquierda">
-        <div class="caracteristicaPrincipal">
-        <h3>${e[i].num}</h3>
-        <h2>${e[i].name}</h2>
-        <img class="img-modal" src="https://pokeres.bastionbot.org/images/pokemon/${e[i].id}.png"> 
-        <h3 class="tipo">Tipo:</h3>
-        <p>${e[i].type.join("</br>")}</p>
         </div>
-        </section>
-        <div class="fondo">
         <div class="derecha">
-        <h3>Altura:</h3>
-        <p>${e[i].height}</p>
-        <h3>Peso:</h3>
-        <p>${e[i].weight}</p>
-        </div>
-        <div class="derecha">
-        <h3>Tipo de Caramelos:</h3>
-        <p> ${e[i].candy} </p>
-        <h3>Cantidad de caramelos para evolucionar:</h3>
-        <p>${e[i].candy_count} </p>
-        </div>
-        </div>
-        <div class="fondo">
-        <div class="debilidades">
-        <h3>Debilidad:</h3>
-        <p>${e[i].weaknesses.join(" - ")}</p>
-        </div>
-        </div>
-        <div class="fondo">
-        <p> Pre Evolución: ${e[i].prev_evolution ? e[i].prev_evolution[0].num : 'No tiene'}</p> 
-        <p> Pre Evolución: ${e[i].prev_evolution ? e[i].prev_evolution[0].name : 'No tiene'}</p> 
-        <p> Evolución: ${e[i].next_evolution ? e[i].next_evolution[0].num : 'No tiene'}</p> 
-        <p> Evolución: ${e[i].next_evolution ? e[i].next_evolution[0].name : 'No tiene'}</p>
-        </div>
+          <div class="text-PokeCard">
+            <h3>Debilidad:</h3>
+            <p>${e[i].weaknesses.join(" - ")}</p>
+          </div>
+          <div class="text-PokeCard">
+            <h3>Tipo de Caramelos:</h3>
+            <p> ${e[i].candy} </p>
+            <h3>N° de caramelos para evolucionar:</h3>
+            <p>${e[i].candy_count} </p>
+          </div>
         </section>`;
         let span = document.getElementsByClassName("close")[0]; 
         span.addEventListener('click', ()=>{
@@ -170,87 +176,3 @@ function viewAllPokemon(dataSet) {
       });
     }
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /*Mostrar Mas Detalles de la Carta
-  const pokeCard = document.querySelector(".viewCard");
-  console.log(pokeCard);
-  pokeCard.addEventListener("click", function(e) {
-    const numId = document.getElementById("pokemon");
-    //console.log(numId);
-    const numPokemon = numId;
-    //console.log(numPokemon);
-    let chosenPoke = cardPoke(allData,numPokemon);
-    //console.log(chosenPoke);
-    viewAllPokemon(chosenPoke);
-  });
-  */
-  
-  
-  /*
-  document.querySelectorAll('.elementCard').forEach(function(el){
-    el.addEventListener('click', function() {
-      const numPokemon = this.id;
-      let chosenPoke = cardPoke(allData,numPokemon);
-      console.log(chosenPoke);
-      //viewAllPokemon(chosenPoke);
-    });
-  });
-  
-  */
-  
-  /* let on= (dataSet)=>{
-    document.getElementById("overlay").style.display = "block";
-    const ovCard = document.getElementById("overlayCard");
-    let cardTemplate = "";
-    cardTemplate += `
-    <section class="tarjetaPrincipal">
-    <div class="contenedor">
-    <section class="izquierda">
-    <div class="caracteristicaPrincipal">
-    <p>${dataSet[0].num}</p>
-    <p>${dataSet[0].name}</p>
-    <img src="${dataSet[0].img}">
-    <p>Tipo: ${dataSet[0].type.join(" - ")}</p>
-    </div>
-    
-    </section>
-    
-    <section class="derecha">
-    <div class="caracteristicasSecundarias">
-    <p>Altura: ${dataSet[0].height}</p>
-    <p>Peso: ${dataSet[0].weight}</p>
-    <p>Caramelos: ${dataSet[0].candy} </p>
-    <p>Cantidad Caramelos:${dataSet[0].candy_count} </p>
-    </div>
-    <div class="debilidades">
-    <p>Debilidad: ${dataSet[0].weaknesses.join(" - ")}</p>
-    </div>
-    </section>
-    </div>
-    <section class="fondo">
-    <div class="subFondo">
-    <img src="http://www.serebii.net/pokemongo/pokemon/002.png">
-    <img src="http://www.serebii.net/pokemongo/pokemon/003.png">
-    </div>
-    
-    </section>
-    </section>`;
-    
-    ovCard.innerHTML = cardTemplate;
-    console.log(ovCard);
-  }
-  document.getElementById("pokemon1").addEventListener("click", on(allData));
-  function off() {
-    document.getElementById("overlay").style.display = "none";
-  }
-  document.getElementById("overlay").addEventListener("click", off); */
