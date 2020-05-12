@@ -43,6 +43,7 @@ Este sketch fue presentado a nuestras compañeras de squad, quienes nos indicaro
 ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Baja%20Fidelidad%205.jpg)
 
 Posterior a esta etapa procedimos a crear nuestro prototipo de alta fidelidad en Figma, donde decidimos inclinarnos por una paleta de colores en tonos verdes gradientes para respetar la identidad gráfica de Pokemon Go y de esa forma que nuestra página se pueda asociar más rápidamente con lo que se esta ofreciendo. Además decidimos seguir una interfaz simple y limpia para no producir saturación visual y respetar los fundamentos del visual design. En este punto realizamos un logo que no se condecía con nuestro diseño principal. Luego de recibir el feedback de nuestras coaches y compañeras realizamos un cambio que se alineaba más con el concepto que estábamos intentando transmitir.
+
 ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Logo%201.png)
 ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Logo.png)
 ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Figma%201.JPG)
