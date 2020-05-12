@@ -80,14 +80,12 @@ header {
     color: #fff;
     text-transform: uppercase;
 }
-​
 .filterOptionBody, nav-flex{
-    margin: auto;
-    width: 90%;  
+    width: 80%;  
 }
 .filterOption, .filterOption .filterOptionBody{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 10px 0;
     background: #F2F2F2;
 }
@@ -95,7 +93,6 @@ select{
     width: 250px;
     padding: 10px;
     border-radius: 8px ;
-    
 }
 .viewCard {
     width: 90%;
@@ -165,19 +162,23 @@ select{
     font-size: 30px;
     margin: 15px;
 }
-​
 .tarjetaPrincipal {
     display: flex;
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #A8DD9C;
 }
-.derecha {
+.medio {
     display: flex;
+    flex-direction: column;
     align-self: center;
-    justify-content: center;
-    padding-left: 5%;
-    max-height: 40%;
+    padding: 0 3%;
+    width: 40%;
+}
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 .izquierda {
     display: flex;
@@ -185,15 +186,16 @@ select{
     width: 30%;
     height: 85vh;
     justify-content: center;
+    text-align: center;
+}
+.text-PokeCard{
+    margin-bottom: 2%;
 }
 .img-modal{
     width: 160px;
 }
-.fondo {
-    flex-flow: row wrap;
-}
-/* Fin Modal*/
-@media all and (max-width: 990px) {
+/*Responsive*/
+@media all and (max-width: 790px) {
     .nav-flex {
         flex-direction: column;
     }
@@ -205,7 +207,7 @@ select{
         justify-content: space-around;
     }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 500px) {
     .logo {
         margin: .25em 0;
         align-self: left; 
@@ -225,9 +227,8 @@ select{
     .navigation li:last-of-type a {
         border-bottom: none;
     } 
-    #filterOption, #filterOption .filterOptionBody {
-        
-        flex-direction:column;
+    .filterOption .filterOptionBody {
+        flex-flow: column wrap;
     } 
     #img-box{
         display: none;
@@ -240,7 +241,33 @@ select{
     h1{
         font-size: 30px;
     }
-    p{
+    h2{
+        font-size: 24px;
+    }
+    h3{
         font-size: 16px;
+    }
+    p{
+        font-size: 13px;
+    }
+    .cardContent{
+        width: 90vw;
+        height: 95vh;
+    }
+    .img-modal{
+        max-width: 100px;
+    }
+    .close{
+        display: inline;
+        height: 30px;
+        margin: 0;
+    }
+    .medio{
+        padding: 0 5%;
+        width: 60%;
+        margin-left: 5%;
+    }
+    .derecha{
+        display: none;
     }
 }
