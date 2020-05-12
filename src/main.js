@@ -159,7 +159,7 @@ function viewAllPokemon(dataSet) {
             <h3>Tipo de Caramelos:</h3>
             <p> ${e[i].candy} </p>
             <h3>N° de caramelos para evolucionar:</h3>
-            <p>${e[i].candy_count} </p>
+            <p>${e[i].candy_count ? e[i].candy_count : 'No tiene'} </p>
           </div>
         </section>`;
         let span = document.getElementsByClassName("close")[0]; 
