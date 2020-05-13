@@ -55,9 +55,10 @@ Posterior a esta etapa procedimos a crear nuestro prototipo de alta fidelidad en
 Una vez el prototipo en Figma terminado comenzamos a realizar a través de maze nuestros test de usabilidad ([aquí](https://t.maze.design/10793867)) con el cual pudimos concluir algunas fallas en nuestro planteamiento de preguntas y verificar la efectividad de nuestro proyecto. 
 ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Maze.JPG)
  
- Además realizamos un último testeo con nuestra sitio ya casi terminado (5 mujeres, entre 25 y 30 años) en el cuál pudimos solucionar nuestros problemas de usabilidad y destacaron lo amigable y simple del proyecto. Finalmente realizamos el último cambio con respecto a la imagen del sitio en su inicio para que este se viera más atractivo sin saturarlo
+ Además realizamos un último testeo con nuestra sitio ya casi terminado (5 mujeres, entre 25 y 30 años) en el cuál pudimos solucionar nuestros problemas de usabilidad y destacaron lo amigable y simple del proyecto. Finalmente realizamos el último cambio con respecto a la imagen del sitio en su inicio para que este se viera más atractivo sin saturarlo y decidimos poner un poco más de información en nuestras tarjetas, cambiando su diseño inicial.
  ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Pag%201.JPG)
  ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Pag2.JPG)
+ ![enter image description here](https://raw.githubusercontent.com/laguilerac/SCL013-data-lovers/master/src/img/Pag3.JPG)
  
 
 ## Status del proyecto
