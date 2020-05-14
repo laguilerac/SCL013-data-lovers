@@ -8,9 +8,13 @@ import {
   filterWeakness,
   searchPoke,
 } from "./data.js";
+
+//Inicialización del Sitio
 document.getElementById("filterOption").style.display= "none";
 document.getElementById("viewCard").style.display="none";
 document.getElementById("search").style.display="none";
+
+//Evento click para mostrar la segunda pantalla
 let capturar = () => {
   document.getElementById("intro").style.display = "none";
   document.getElementById("filterOption").style.display = "";
@@ -20,17 +24,21 @@ let capturar = () => {
 };
 document.getElementById("btnSecondPage").addEventListener("click", capturar);
 document.getElementById("pokedex").addEventListener("click", capturar);
+
+//Evento para ir al Inicio
 let home = () => {
   window.location.reload();
 };
 document.getElementById("home").addEventListener('click', home);
 document.getElementById("link-home").addEventListener('click', home);
+
+//Variables menejo de datos
 const card = document.getElementById("viewCardCreate");
-//Arreglo con todos los datos de Pokemones
-const allData = allPokemon(Pokemones.pokemon);
+const allData = allPokemon(Pokemones.pokemon); // Muestra todos los datos
 const orderedDataAz = orderPokemonAz(allData);
 const orderedDataZa = orderPokemonZa(allData);
 const orderedPokeDescendant = orderedDataDescendant(allData);
+
 //Muestra todos lo Pokemones en pantalla
 function viewAllPokemon(dataSet) {
   let cardTemplate = ""; 
@@ -54,6 +62,7 @@ function viewAllPokemon(dataSet) {
     card.innerHTML = cardTemplate; 
     modal(dataSet);
   }
+
   //Ordenar pokemones A-Z / Z-A / 151-1/ Regresar a todos
   const selectElement = document.querySelector(".ordenPoke");
   selectElement.addEventListener("change", (e) => {
@@ -71,6 +80,7 @@ function viewAllPokemon(dataSet) {
       viewAllPokemon(allData);
     }
   });
+
   //Filtrar Pokemones por Tipo
   const selectType = document.querySelector(".typePoke");
   selectType.addEventListener("change", () => {
@@ -82,6 +92,7 @@ function viewAllPokemon(dataSet) {
       viewAllPokemon(result);
     }
   });
+
   //Filtrar Pokemones por Debilidad
   const selectWeakness = document.querySelector(".weakness");
   selectWeakness.addEventListener("change", () => {
@@ -96,19 +107,18 @@ function viewAllPokemon(dataSet) {
       viewAllPokemon(result);
     }
   });
+
   //Buscar Pokemon por nombre 
   const input = document.getElementById("search");
-  input.addEventListener("keydown", function() {
-    if(event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-      event.preventDefault();
-      //card.innerHTML = "";
-      const name = input.value;
-      const pokeName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  input.addEventListener("keyup", function() {
+        const name = input.value;     
+      const pokeName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();      
       let chosenPoke = searchPoke(allData,pokeName);
       //console.log(chosenPoke);
-      viewAllPokemon(chosenPoke);    
-    } 
+      viewAllPokemon(chosenPoke);   
   });
+
+// Mostrar cada pokemon con todas sus caracteristicas
   function modal(e){
     let principalContent = document.getElementById("principalModal");
     let cardcont = document.getElementById ("cardContent");
@@ -117,11 +127,10 @@ function viewAllPokemon(dataSet) {
     for(let i= 0; i<itemsPoke.length; i++){
       let tarjeta = itemsPoke[i];
       tarjeta.addEventListener ('click', ()=>{   
-        principalContent.style.display = ""; 
-        console.log()
+        principalContent.style.display = "block"; 
+       // console.log()
         cardcont.innerHTML += `
         <section class="tarjetaPrincipal">
-        <span class="close">&times;</span>
           <section class="izquierda">
             <div class="caracteristicaPrincipal">
               <h3>${e[i].num}</h3>
@@ -150,8 +159,8 @@ function viewAllPokemon(dataSet) {
           </div>
         </div>
         </div>
-        <div class="derecha">
-          <div class="text-PokeCard">
+      <div class="derecha">          
+        <div class="text-PokeCard">
             <h3>Debilidad:</h3>
             <p>${e[i].weaknesses.join(" - ")}</p>
           </div>
@@ -161,6 +170,8 @@ function viewAllPokemon(dataSet) {
             <h3>N° de caramelos para evolucionar:</h3>
             <p>${e[i].candy_count ? e[i].candy_count : 'No tiene'} </p>
           </div>
+          </div>
+          <span class="close">&times;</span>          
         </section>`;
         let span = document.getElementsByClassName("close")[0]; 
         span.addEventListener('click', ()=>{
