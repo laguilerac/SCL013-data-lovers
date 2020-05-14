@@ -1,23 +1,28 @@
+/* Reinicio de Estilos */
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
 }
+/* Margen del Logo */
 .logo {
     margin: 0 0 0 5%;
 }
+/* Estilos del Logo */
 .logo img{
     height: 10vh;
     display: block;
     padding: 1em;
 }
+/* Estilos de la Barra de Navegacion Superior */
 .nav-flex  {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, #A8DD9C 0%, #24CCAA 100%);
 }
+/* Estilo Mayuscula de Los Textos de la Barra de Navegacion*/
 .navigation {
     display: flex;
     list-style: none;
@@ -25,18 +30,22 @@
     padding-right: 3em;
     padding-left: 1em;
 }
+/* Elimina la decoracion de los textos */
 .logo, .navigation a {
     text-decoration: none;
     letter-spacing: .45rem;
 }
+/* Color y Estilo de la Barra de Navegacion */
 .navigation a {
     display: block;
     padding: 1em;
     color: white;
 }
+/* Hover de la Barra de Navegacion */
 .navigation a:hover {
     background: #2F80ED;
 }
+/* Cuadro de texto Buscar */
 input{
     height: 20px;
     border-radius: 10px;
@@ -44,6 +53,7 @@ input{
     border-color: #2F80ED;
     text-indent: 4%;
 }
+/* Textos Tarjetas */
 h1, h2, h3 {
     color: #2F80ED;
 }
@@ -58,16 +68,19 @@ p{
     font-size: 20px;
     line-height: 24px;
 }
+/* Estilo de la Imagen de pagina inicial */
 #img-header{
     max-height: 470px;
     margin-top: 8%;
 }
+/* Estilo pagina inicial */
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
+/* Boton Ir a Pokedex */
 .button{
     margin-top: 2%;
     border-width: 0px;
@@ -80,29 +93,35 @@ header {
     color: #fff;
     text-transform: uppercase;
 }
+/* Cajas de listas de filtros */
 .filterOptionBody, nav-flex{
     width: 80%;  
 }
+/* Fondo Cajas de listas de Filtros */
 .filterOption, .filterOption .filterOptionBody{
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
     background: #F2F2F2;
 }
+/* Estilo de cada caja de filtro */
 select{
     width: 250px;
     padding: 10px;
     border-radius: 8px ;
 }
+/* Contenedor Tarjeta */
 .viewCard {
     width: 90%;
     margin: auto; 
 }
+/* Tarjeta */
 .viewCardCreate{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+/* Tarjeta creada */
 .itemsPoke{
     width: 200px;
     height: 420px;
@@ -120,9 +139,11 @@ select{
     -webkit-transition-property: transform;
     transition-property: transform;
 }
+/* Imagen de cada tarjeta Pokemon */
 .imgPokemon{
     max-width: 130px;
 }
+/* Hover de Tarjeta */
 .itemsPoke:hover{
     border: #8fda9f solid 2.5px;
     -webkit-transform: scale(1.1);
@@ -132,7 +153,7 @@ select{
 /* Fondo del la Tarjeta de Caracteristicas Adicionales */
 #principalModal {
     position: fixed;
-    display: flex;
+    display: none;
     width:100vw;
     height: 100vh;
     top: 50%;
@@ -147,6 +168,7 @@ select{
     -moz-box-shadow: 15px 15px 10px -8px rgba(0, 0, 0, 0.5);
     box-shadow: 15px 15px 10px -8px rgba(0, 0, 0, 0.5);
 }
+/* Tarjeta de descripciones */
 .cardContent{
     width: 75vw;
     height: 85vh; 
@@ -155,16 +177,19 @@ select{
     justify-content: center;
     margin: 0 auto;
 }
+/* Item X cerrar */
 .close {
     text-align: right;
     color: #2F80ED;
     font-size: 30px;
     margin: 15px;
+    padding-left: 25px;
 }
+/* estilos de cada sector de la tarjeta modal */
 .tarjetaPrincipal {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width:70%;
+    height: 80%;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #A8DD9C;
     border-radius: 15px;
 }
@@ -172,21 +197,23 @@ select{
     display: flex;
     flex-direction: column;
     align-self: center;
-    padding-left: 3%;
+    padding-left: 5%;
     width: 25%;
 }
 .derecha{
     display: flex;
     flex-direction: column;
     align-self: center;
+    padding-left: 2em;
 }
 .izquierda {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: 85vh;
+    width: 45%;
+    height: 67vh;
     justify-content: center;
     text-align: center;
+    padding-left: 2em;
 }
 .text-PokeCard{
     margin-bottom: 2%;
@@ -260,7 +287,6 @@ select{
     }
     .close{
         display: inline;
-        height: 30px;
         margin: 0;
     }
     .medio{
